@@ -9,6 +9,7 @@ handler = case engine
     Erubis::Eruby
   when 'erb'
     require 'erb'
+    include Rails.application.routes.url_helpers
     ERB
   else raise "Unknown templating engine `#{engine}`"
 end
